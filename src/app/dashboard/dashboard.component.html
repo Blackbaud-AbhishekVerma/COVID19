@@ -1,0 +1,31 @@
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>State Name</th>
+        <th>Recovered</th>
+        <th>Active</th>
+        <th>Confirmed</th>
+        <th>Deaths</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let loadedPost of loadedPosts | slice:1 ">
+        <td>
+          <div class="open-btn">
+            <button class="btn btn-outline-info" id="{{ loadedPost.statecode }}" (click)="onLoadStateInfo($event)">
+            {{ loadedPost.state }}
+            </button>
+          </div>
+        </td>
+        <td>{{ loadedPost.recovered }}</td>
+        <td>{{ loadedPost.active }}</td>
+        <td>{{ loadedPost.confirmed }}</td>
+        <td>{{ loadedPost.deaths }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <router-outlet></router-outlet>
+<!-- <app-state></app-state> -->
+ 

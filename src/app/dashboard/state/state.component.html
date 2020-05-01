@@ -1,0 +1,26 @@
+<h2>{{ stateName }}</h2>
+<hr>
+<div class="container">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Districts Name</th>
+                <th>Recovered</th>
+                <th>Active</th>
+                <th>Confirmed</th>
+                <th>Deaths</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let District of Districts">
+                <td>{{ District[0] }}</td>
+                <td>{{ District[1].recovered }}</td>
+                <td>{{ District[1].active }}</td>
+                <td>{{ District[1].confirmed }}</td>
+                <td>{{ District[1].deceased }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<router-outlet></router-outlet>
+<!-- <app-state></app-state> -->

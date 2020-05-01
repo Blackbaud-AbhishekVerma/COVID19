@@ -1,0 +1,33 @@
+<!-- <div class="container">
+        <div class="alert alert-warning" *ngIf="invalid">{{errorMessage}}</div>
+        <div>
+        <form>
+             User Name : <input type="text" name="userName" [(ngModel)]="username">
+             Password : <input type="password" name="password" [(ngModel)]="password">
+             <button (click)=login() class="btn btn-success">Login</button>
+        </form>              
+    </div>
+</div> -->
+<form class="example-form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="emailFormControl" id="email" [errorStateMatcher]="matcher"
+               placeholder="Ex. pat@example.com">
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [formControl]="passwordFormControl" id="password" [errorStateMatcher]="matcher" placeholder="*****">
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+            Password is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <button class="btn btn-primary" type="submit">Login</button>
+    <button class="btn btn-danger" (click)="onCancel()"><a>Cancel</a></button>
+</form>
