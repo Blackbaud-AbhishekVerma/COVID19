@@ -1,0 +1,46 @@
+.header_logo{
+    border-bottom: 1px solid #c3c3c3;
+    padding-bottom: 12px;
+}
+.top_navs{
+    margin-top: 15px;
+}
+.header_logo a{
+        color: #de2626;
+}
+.header_logo a:hover{
+    text-decoration: none;
+}
+.top_navs li.active a{
+    background: #de2626;
+    color: #ffffff;
+}
+.top_navs{
+    border-bottom: none;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+.covid_img{
+    width: 50px;
+}
+.header_logo a{
+    display: flex;
+    align-items: center;
+}
+.header_logo a img{
+    margin-left: 10px;
+}
+.covid_img{
+    width: 60px;
+    margin-left: 10px;
+    animation: rotation 8s infinite linear;
+  }
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }

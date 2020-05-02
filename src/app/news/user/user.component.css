@@ -12,3 +12,9 @@
 .example-button-row a {
   margin-right: 8px;
 }
+.login_btn{
+  margin-right: 10px;
+}
+.cancel_btn a{
+  color: #fff;
+}

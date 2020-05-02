@@ -1,31 +1,30 @@
 <div class="container">
-  <table class="table table-hover">
+  <table class="table table-hover table-striped">
     <thead>
       <tr>
         <th>State Name</th>
-        <th>Recovered</th>
-        <th>Active</th>
-        <th>Confirmed</th>
-        <th>Deaths</th>
+        <th class="text-center">Recovered</th>
+        <th class="text-center">Active</th>
+        <th class="text-center">Confirmed</th>
+        <th class="text-center">Deaths</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let loadedPost of loadedPosts | slice:1 ">
+      <tr class="dashboard_table" *ngFor="let loadedPost of loadedPosts | slice:1 ">
         <td>
           <div class="open-btn">
-            <button class="btn btn-outline-info" id="{{ loadedPost.statecode }}" (click)="onLoadStateInfo($event)">
+            <button class="btn btn-outline-info state_btn" id="{{ loadedPost.statecode }}" (click)="onLoadStateInfo($event)">
             {{ loadedPost.state }}
             </button>
           </div>
         </td>
-        <td>{{ loadedPost.recovered }}</td>
-        <td>{{ loadedPost.active }}</td>
-        <td>{{ loadedPost.confirmed }}</td>
-        <td>{{ loadedPost.deaths }}</td>
+        <td class="text-center state_info">{{ loadedPost.recovered }}</td>
+        <td class="text-center state_info">{{ loadedPost.active }}</td>
+        <td class="text-center state_info">{{ loadedPost.confirmed }}</td>
+        <td class="text-center state_info">{{ loadedPost.deaths }}</td>
       </tr>
     </tbody>
   </table>
 </div>
   <router-outlet></router-outlet>
-<!-- <app-state></app-state> -->
  

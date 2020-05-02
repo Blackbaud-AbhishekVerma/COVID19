@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row">
-    <h1>
-      <a routerLink="/">COVID-19</a>
+    <h1 class="header_logo">
+      <a routerLink="/">COVID-19 <img src="../../assets/images/covid-19.png" class="img-responsive covid_img" alt=""></a>     
     </h1>
   </div>
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <ul class="nav nav-tabs">
-        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Dashboard</a></li>
+    <div class="col-xs-12 col-sm-10 col-md-8">
+      <ul class="nav nav-tabs top_navs">
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a
+            routerLink="/">Dashboard</a></li>
         <li role="presentation" routerLinkActive="active"><a routerLink="news">Latest News</a></li>
         <li role="presentation" routerLinkActive="active"><a routerLink="precautions">Precautions</a></li>
       </ul>

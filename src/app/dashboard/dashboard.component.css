@@ -1,0 +1,19 @@
+body{
+    font-family: Poppins,sans-serif !important;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f8f9fa;
+}
+.open-btn .state_btn{
+    text-decoration: underline;
+    padding: 0;
+    background: transparent;
+    font-family: Poppins,sans-serif !important;
+    letter-spacing: .77px;
+}
+.table>thead>tr>th{
+    font-family: Poppins,sans-serif !important;
+}
+.state_info{
+    font-family: Poppins,sans-serif !important;
+}
