@@ -3,8 +3,8 @@ import {FormControl, FormGroupDirective, NgForm, Validators, FormGroup} from '@a
 import {ErrorStateMatcher} from '@angular/material/core';
 import { Router } from '@angular/router';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
-import { News } from "../../models/news.model";
-import { NewsService } from "../../services/news.service";
+import { News } from "../../core/models/news.model";
+import { NewsService } from "../../core/services/news.service";
 import { DatePipe } from '@angular/common';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {

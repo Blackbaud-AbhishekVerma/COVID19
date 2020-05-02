@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IDasboardPost } from '../models/dashboard-post.model';
-import { DashboardPostService } from '../services/dashboard-post.service';
+import { IDasboardPost } from '../core/models/dashboard-post.model'
+import { DashboardPostService } from '../core/services/dashboard-post.service';
 import { Observable } from 'rxjs';
 
 @Component({

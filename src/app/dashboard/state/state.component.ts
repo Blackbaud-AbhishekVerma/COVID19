@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { RegionModel, DistrictDataModel } from '../../models/state-region.model';
-import { StateRegionService } from '../../services/state-region.service';
+import { RegionModel, DistrictDataModel } from '../../core/models/state-region.model';
+import { StateRegionService } from '../../core/services/state-region.service';
 import { Observable } from 'rxjs';
 
 @Component({

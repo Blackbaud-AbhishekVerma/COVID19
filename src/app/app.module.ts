@@ -15,8 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddNewsComponent } from './news/add-news/add-news.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { AuthGaurdService } from './services/auth-gaurd.service';
-import { LoginService } from './services/user-login.service';
+import { AuthGaurdService } from './core/services/auth-gaurd.service';
+import { LoginService } from './core/services/user-login.service';
 
 // const appRoutes: Routes =[
 //   {path: '', component: DashboardComponent},

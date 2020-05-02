@@ -7,7 +7,17 @@ import { News } from "../models/news.model";
 
 export class NewsService {
 
-    newsList: News[] = [];
+    newsList: News[] = [
+        {"title": "News1",
+         "description" :"NewsDescription1",
+         "content" :"NewsContent11",
+         "dateAdded": new Date().toString()},
+        
+         {"title": "News2",
+         "description" :"NewsDescription2",
+         "content" :"NewsContent22",
+         "dateAdded": new Date().toString()}
+        ];
 
     addNews(news: News) {
         try {

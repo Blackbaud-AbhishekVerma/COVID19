@@ -6,7 +6,7 @@ import { PrecautionComponent } from './precaution/precaution.component';
 import { StateComponent } from './dashboard/state/state.component';
 import { UserComponent } from './news/user/user.component';
 import { AddNewsComponent } from './news/add-news/add-news.component';
-import { AuthGaurdService } from './services/auth-gaurd.service';
+import { AuthGaurdService } from './core/services/auth-gaurd.service';
 
 const appRoutes: Routes =[
   {path: '', component: DashboardComponent},
