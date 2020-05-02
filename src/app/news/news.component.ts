@@ -17,9 +17,6 @@ export class NewsComponent implements OnInit {
   constructor(private loginService: LoginService, private newsService: NewsService, private router: Router) { }
 
   ngOnInit(): void {
-    //this.newsService.addNews(new News('News','NewsDescription',"NewsContent"));
-    // this.newsService.addNews(new News('News','NewsDescription',"NewsContent"));
-    // this.newsService.addNews(new News('News','NewsDescription',"NewsContent"));
     this.newsList = this.newsService.newsList;
     this.isAuthenticated = this.checkLogin();
     console.log(this.isAuthenticated);
