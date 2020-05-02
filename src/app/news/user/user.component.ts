@@ -18,19 +18,15 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 })
 export class UserComponent implements OnInit {
 
+  loginForm: FormGroup;
+  matcher = new MyErrorStateMatcher();
   emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email
   ]);
-  
   passwordFormControl = new FormControl('', [
     Validators.required
   ]);
-
-  loginForm: FormGroup;
-
-  matcher = new MyErrorStateMatcher();
-
   errorMessage: string;
   invalid: boolean;
 
@@ -43,26 +39,26 @@ export class UserComponent implements OnInit {
     });
   } 
 
-    onSubmit(){
-      if(!this.loginForm.invalid){
-        if(this.loginService.authenticate(this.emailFormControl.value,this.passwordFormControl.value)){
-                this.router.navigate(['/news'])
-                this.invalid=false
-                this.errorMessage="";       
-              }
-              else{
-                this.errorMessage="Inavlid credientials";
-                this.invalid=true;
-              }
-      } 
+  onSubmit(){
+    if(!this.loginForm.invalid){
+      if(this.loginService.authenticate(this.emailFormControl.value,this.passwordFormControl.value)){
+          this.router.navigate(['/news'])
+          this.invalid=false
+          this.errorMessage="";       
+        }
       else{
-        this.errorMessage ="Vaidation Errors"
-        this.invalid=true;
-      }     
-    }
+          this.errorMessage="Inavlid credientials";
+          this.invalid=true;
+        }
+      } 
+    else{
+      this.errorMessage ="Vaidation Errors"
+      this.invalid=true;
+    }     
+  }
     
-    onCancel(){
-      this.router.navigate(['/news']);
-    }
+  onCancel(){
+    this.router.navigate(['/news']);
+  }
     
 }

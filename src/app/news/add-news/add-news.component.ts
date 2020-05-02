@@ -23,22 +23,17 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 
 export class AddNewsComponent implements OnInit {
 
+  newsForm: FormGroup;
+  matcher = new MyErrorStateMatcher();
   titleFormControl = new FormControl('', [
     Validators.required
   ]);
-  
   descriptionFormControl = new FormControl('', [
     Validators.required
   ]);
-
   contentFormControl = new FormControl('', [
     Validators.required
   ]);
-
-  newsForm: FormGroup;
-
-  matcher = new MyErrorStateMatcher();
-
   public Editor = ClassicEditor;
   ckeConfig: any;
 
@@ -50,15 +45,12 @@ export class AddNewsComponent implements OnInit {
       'description': this.descriptionFormControl,
       'content':  this.contentFormControl
     });
-
-    this.setEditorConfig(); 
-    console.log(this.titleFormControl.hasError('required'))
-    console.log(this.descriptionFormControl.hasError('required'))
+    this.setEditorConfig();
   }
 
   onSubmit(){
     if(!this.newsForm.invalid){
-      this.newsService.addNews(new News(this.titleFormControl.value,this.descriptionFormControl.value,this.contentFormControl.value));
+      this.newsService.addNewNews(new News(this.titleFormControl.value,this.descriptionFormControl.value,this.contentFormControl.value)).subscribe();
       this.router.navigate(['/news']);
     }    
   };

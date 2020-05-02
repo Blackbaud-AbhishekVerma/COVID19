@@ -3,6 +3,7 @@ import { LoginService } from '../core/services/user-login.service';
 import { News } from "../core/models/news.model";
 import { NewsService } from "../core/services/news.service";
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
@@ -17,9 +18,15 @@ export class NewsComponent implements OnInit {
   constructor(private loginService: LoginService, private newsService: NewsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.newsList = this.newsService.newsList;
+    this.fetchNews();
     this.isAuthenticated = this.checkLogin();
-    console.log(this.isAuthenticated);
+  }
+
+  private fetchNews(){
+    this.newsService.fetchNews().subscribe(data => {
+      this.newsList = data;
+      this.newsList.sort((val1, val2)=> {return val1.dateAdded > val2.dateAdded ? -1 : 1 })
+    })
   }
 
   private checkLogin(){
@@ -38,4 +45,5 @@ export class NewsComponent implements OnInit {
     this.loginService.logOut();
     this.router.navigate(['']);
   }
+  
 }
