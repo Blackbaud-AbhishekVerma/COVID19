@@ -27,4 +27,12 @@ describe('StateComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render th with District Name', async(() => {
+    let fixture = TestBed.createComponent(StateComponent);
+    fixture.detectChanges();
+    let compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('th').textContent).toContain('Districts Name');
+  }));
+
 });

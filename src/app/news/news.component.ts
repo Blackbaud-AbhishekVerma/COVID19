@@ -13,7 +13,7 @@ export class NewsComponent implements OnInit {
  
   newsList: News[] =[];
 
-  isAuthenticated: boolean;
+  isAuthenticated: boolean = false;
 
   constructor(private loginService: LoginService, private newsService: NewsService, private router: Router) { }
 

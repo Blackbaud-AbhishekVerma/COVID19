@@ -13,7 +13,7 @@ const httpOptions ={
 })
 export class NewsService {
 
-    private apiJsonUrl = "http://localhost:3010/news";
+    apiJsonUrl = "http://localhost:3010/news";
 
     constructor(private http: HttpClient){}
 

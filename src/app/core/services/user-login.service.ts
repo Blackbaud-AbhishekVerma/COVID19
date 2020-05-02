@@ -8,7 +8,7 @@ export class LoginService{
   constructor() { }
   authenticate(username, password){
     if(username ==="abc@gmail.com" && password=="root"){
-      sessionStorage.setItem('authenticatedUser', username);
+      sessionStorage.setItem('authenticatedUser' , 'abc@gmail.com');
       return true
     }
     else{

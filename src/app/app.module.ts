@@ -17,8 +17,6 @@ import { AddNewsComponent } from './news/add-news/add-news.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { AuthGaurdService } from './core/services/auth-gaurd.service';
 import { LoginService } from './core/services/user-login.service';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { NewsInMemoryService } from './core/services/news-in-memory.service';
 
 @NgModule({
   declarations: [
@@ -41,11 +39,7 @@ import { NewsInMemoryService } from './core/services/news-in-memory.service';
     MatDialogModule,
     MatInputModule,
     BrowserAnimationsModule,
-    CKEditorModule,
-    HttpClientInMemoryWebApiModule
-    .forRoot(
-      NewsInMemoryService, { dataEncapsulation: false, passThruUnknownUrl: true }
-    ), 
+    CKEditorModule
   ],
   providers: [AuthGaurdService, LoginService],
   bootstrap: [AppComponent],
