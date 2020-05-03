@@ -18,8 +18,11 @@ export class NewsComponent implements OnInit {
   constructor(private loginService: LoginService, private newsService: NewsService, private router: Router) { }
 
   ngOnInit(): void {
-    this.fetchNews();
     this.isAuthenticated = this.checkLogin();
+  }
+
+  ngAfterViewInit(){
+    this.fetchNews();
   }
 
   private fetchNews(){

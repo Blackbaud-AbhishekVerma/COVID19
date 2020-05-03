@@ -15,14 +15,16 @@ export class NewsService {
 
     apiJsonUrl = "http://localhost:3010/news";
 
+    apiHeroku = "https://covid-19-server-abhi.herokuapp.com/news"
+
     constructor(private http: HttpClient){}
 
     fetchNews(): Observable<News[]>{
-        return this.http.get<News[]>(this.apiJsonUrl);
+        return this.http.get<News[]>(this.apiHeroku);
     }
 
     addNewNews(newNews: News): Observable<News>{
-        return this.http.post<News>(this.apiJsonUrl, newNews, httpOptions).pipe(
+        return this.http.post<News>(this.apiHeroku, newNews, httpOptions).pipe(
             catchError(this.handelError)
         );
     };
