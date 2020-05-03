@@ -14,7 +14,7 @@ describe('LoginService', () => {
         expect(service.isUserLoggedIn()).toBeFalsy();
     }));
 
-    it('sholuid return false id password is incorrect', fakeAsync(() => {
+    it('sholuid return false if password is incorrect', fakeAsync(() => {
         let result = service.authenticate("abc@gmail.com","rout")
         expect(result).toBeFalsy();
     }))
